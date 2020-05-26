@@ -62,6 +62,96 @@ app.get('/workout/new',(req,res) =>{
     res.render('New')
 });
 
+/// Create 
+app.post('/workout', (req,res) =>{
+    WorkOut.create(req.body, (error, createdWorkOut)=>{
+        res.redirect('/workout')
+    });
+});
+
+
+////seed Data
+app.get('/workout/seed',(req,res) =>{
+    WorkOut.create([
+        {
+    Exercise_Name: 'Squat',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRZxBtNbPG2f3h7r3IQl3Ooi6qji8MCWCPmsqZJUMvNtXU7JWX&usqp=CAU',
+    Warm_up_weight: 135 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 245,
+    Working_sets: 3,
+    Working_reps: 8
+
+        },
+        {
+    Exercise_Name: 'Leg Press',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQkNRfE_AirUp5bTfHVBoKG_MxjmwnEhD6zaoJJ1-vnNqldXm&usqp=CAU',
+    Warm_up_weight: 225 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 405,
+    Working_sets: 3,
+    Working_reps: 8
+
+        },
+        {
+    Exercise_Name: 'Split Squat',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfdO3ge8EAmNk5P_XhBbzmyJnYZ0DQXiSjQ4D3qOsJP94pzR02&usqp=CAU',
+    Warm_up_weight: 0 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 25,
+    Working_sets: 3,
+    Working_reps: 8
+            
+        },
+        {
+    Exercise_Name: 'Bench Press',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQK19BzeQ1h2aHnE1TCsAGao0RyOUxEKXHmnpvd8tUC1TgV7sOs&usqp=CAU',
+    Warm_up_weight: 135 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 265,
+    Working_sets: 3,
+    Working_reps: 8
+
+        },
+        {
+    Exercise_Name: 'Incline Bench Press',
+    img:{},
+    Warm_up_weight: 135 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 225,
+    Working_sets: 3,
+    Working_reps: 8
+
+        },
+        {
+    Exercise_Name: 'Chest Flyes',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmAau8EHdoF6sGkw-uK6Dn7ZYvjldFml0Q8J594pGsGKY0XGto&usqp=CAU',
+    Warm_up_weight: 20 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 35,
+    Working_sets: 3,
+    Working_reps: 8
+        },
+        {
+    Exercise_Name: 'Chest Flyes',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmAau8EHdoF6sGkw-uK6Dn7ZYvjldFml0Q8J594pGsGKY0XGto&usqp=CAU',
+    Warm_up_weight: 20 ,
+    Sets: 2,
+    Reps: 10,
+    Working_weight: 35,
+    Working_sets: 3,
+    Working_reps: 8
+
+        }
+
+    ])
+})
 
 
 
