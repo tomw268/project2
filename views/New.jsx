@@ -3,21 +3,24 @@ const React = require('react');
 class New extends React.Component {
     render(){
         return (
-            <div>
-                <h1>New Exercise</h1>
-                <form action='/workout' method='POST'>
-                    Exercise Name: <input type='text' name='exercise name'/><br/>
-                    img: <input type='url' name='img'/><br/>
-                    Warm up weight: <input type='number' name='warmup'/><br/>
-                    Sets: <input type='number' name='sets'/><br/>
-                    Reps: <input type='number' name='reps'/><br/>
-                    Working weight: <input type='number' name='workingweight'/><br/>
-                    Working Sets:<input type='number' name='workingsets'/><br/>
-                    Working Reps: <input type='number' name='workingreps'/><br/>
+            <>
+                <h1>Add New Exercise</h1>
+                <div>
+                <form action='/create' method='POST'>
+                    <input type='text' name='Name' placeholder='Name'/><br/>
+                    <input type='url' name='img' placeholder='Image URL'/><br/>
+                    <input type='number' name='Warm_up_weight' placeholder='Warm Up Weight'/><br/>
+                    <input type='number' name='Sets' placeholder='Warm Up Sets'/><br/>
+                    <input type='number' name='Reps' placeholder='Warm Up Reps'/><br/>
+                    <input type='number' name='Working_weight' placeholder='Working Weight'/><br/>
+                    <input type='number' name='Working_sets' placeholder='Working Sets'/><br/>
+                    <input type='number' name='Working_reps' placeholder='Working Reps'/><br/>
+                    <input type='submit' name='' value='Add New Exercise'/>
                     
 
                 </form>
             </div>
+            </>
         )
     }
 }

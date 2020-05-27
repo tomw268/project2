@@ -2,23 +2,62 @@ const React = require('react');
 
 
 
+// class Index extends React.Component{
+//     render(){
+//         const {WorkOut} = this.props;
+//         return(
+//             <div>
+//                 <h1>Your Fitness Tracker</h1>
+//                 <nav>
+//                     <button><a href ='/workout/new'>Add New Exercise</a></button>
+//                 </nav>
+//                 <>
+//                 {WorkOut.map((workout,i)=>{
+//                     return(
+//                        <p>
+//                            {WorkOut.Name}
+//                        </p>
+                            
+                        
+//                     )
+//                 })}
+//                 </>
+//             </div>
+//         )
+//     }
+// }
+
+
+
 class Index extends React.Component{
     render(){
-        const {WorkOut} =this.props
+        const {WorkOut,Index} =this.props
 
         return (
             <>
-            <h1>Workout App Title</h1>
+            <h1>Workout Tracker</h1>
             <nav>
                 <a href='/workout/new'>Add New Exercise</a>
             </nav>
-            <ul>
-                {WorkOut.map(() => {
+            <div key={Index}>
+                {
+                WorkOut.map((WorkOut, Index) => {
+                    
                     return (
-                        <li></li>
+                        <div key={Index}>
+                           
+                            <p>{WorkOut.Name}</p>
+
+                             <button>< a href={`/workout/${Index}`}>See Workout Details</a></button>
+                             <form action={`/delete/${Index}?_method=DELETE`}method='POST'>
+                                 <input type="submit" value="delete" />
+                             </form>
+                        </div>
                     )
+                    
                 })}
-            </ul>
+            </div>
+          
 
 
 
@@ -28,3 +67,5 @@ class Index extends React.Component{
         )
     }
 }
+
+module.exports = Index;
