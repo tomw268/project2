@@ -60,7 +60,9 @@ app.get('/workout',(req,res)=>{
 
 
 
-
+app.get('/', (req,res)=>{
+    res.send('Fixed?')
+})
 ////////////New
 
 app.get('/workout/new', (req,res) =>{
