@@ -61,7 +61,7 @@ app.get('/workout',(req,res)=>{
 
 
 app.get('/', (req,res)=>{
-    res.send('Fixed?')
+    res.render('Index')
 })
 ////////////New
 
