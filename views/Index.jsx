@@ -32,7 +32,7 @@ const Layout = require('./components/Layout');
 
 class Index extends React.Component{
     render(){
-        const {WorkOut,Index} =this.props
+        const {WorkOut} =this.props
 
         return (
         
@@ -43,21 +43,22 @@ class Index extends React.Component{
             <nav>
                 <a href='/workout/new'>Add New Exercise</a>
             </nav>
-            <div  key={Index}>
+            <div>
                 {
-                WorkOut.map((WorkOut, Index) => {
+                WorkOut.map((WorkOut, index) => {
                     
                     return (
-                        <div className="card" key={Index}>
+                        <div className="card">
                            <div className="card-body" className="text-capitalize"> 
                             <p className="card-title">{WorkOut.Name}</p>
 
-                             <button>< a className="badge badge-primary text-wrap"href={`/workout/${Index}`}>See Workout Details</a></button>
-                             <button>
-                    <a className="card-link" className="badge badge-primary text-wrap" href={`/edit/${Index}`}>Update Exercise Data</a>
-                    </button>
+                             <button>< a className="badge badge-primary text-wrap"href={`/workout/${index}`}>See Workout Details</a></button>
 
-                             <form className="badge badge-primary text-wrap" action={`/delete/${Index}?_method=DELETE`}method='POST'>
+                              <button>
+                                <a className="card-link" className="badge badge-primary text-wrap" href={`/workout/edit/${index}`}>Update Exercise Data</a>
+                                </button>
+
+                             <form className="badge badge-primary text-wrap" action={`/delete/${index}?_method=DELETE`}method='POST'>
                                  <input type="submit" value="delete" />
                              </form>
                              </div>

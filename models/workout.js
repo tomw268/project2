@@ -123,5 +123,6 @@ WorkOut = [
         }
 ]
 // // Export Workout model
+
 module.exports = WorkOut;
         

@@ -4,12 +4,13 @@ const Layout = require('./components/Layout');
 
 class Edit extends React.Component{
     render(){
-        const {WorkOut, Index} = this.props;
+        const {WorkOut} = this.props;
+        console.log(WorkOut);
         return(
-            <div key={Index}>
+            <div>
                 <Layout></Layout>
                 <h1>Edit Exercise Data</h1>
-                <form action={`/update/${Index}?_method=put`}method='POST'>
+                <form action={`/workout/update/${this.props.index}?_method=put`}method='POST'>
                     <input type='text' name='Name' value={WorkOut.Name} /><br/>
 
                     <input type='url' name='img' value={WorkOut.img}/><br/>

@@ -78,20 +78,22 @@ app.post('/create', (req,res) =>{
 
 
 
-
 /////////////Show
-app.get('/workout/:index',(req,res)=>{
+app.get('/workout/:id',(req,res)=>{
     res.render('Show', {
-        WorkOut: WorkOut[req.params.index]
+        WorkOut: WorkOut[req.params.id]
     })
      
 })
 
 
 ///////////////Edit
-app.get('/edit/:index',(req,res)=>{
+app.get('/workout/edit/:index',(req,res)=>{
+    console.log(WorkOut);
+    const workout = WorkOut[req.params.index]
+    console.log(workout);
     res.render('Edit',{
-        WorkOut: WorkOut[req.params.index],
+        WorkOut: workout,
         index: req.params.index
     });
 });
@@ -99,13 +101,10 @@ app.get('/edit/:index',(req,res)=>{
 
 
 
-
-
-
 //////////Update
-app.put('/update/:index', (req,res) =>{
+app.put('/workout/update/:Index', (req,res) =>{
     const { Index } = req.params
-    req.body.id = WorkOut[Index]
+    req.body.id = WorkOut[Index].id
     WorkOut[Index] = req.body;
     res.redirect('/workout')
 
