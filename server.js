@@ -59,10 +59,6 @@ app.get('/workout',(req,res)=>{
 
 
 
-
-app.get('/', (req,res)=>{
-    res.render('Index')
-})
 ////////////New
 
 app.get('/workout/new', (req,res) =>{
