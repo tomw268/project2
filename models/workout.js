@@ -23,6 +23,7 @@ const mongoose = require('mongoose');
 
 WorkOut = [
 {
+    
     Name: 'Squat',
     img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRZxBtNbPG2f3h7r3IQl3Ooi6qji8MCWCPmsqZJUMvNtXU7JWX&usqp=CAU',
     Warm_up_weight: 135 ,

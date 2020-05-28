@@ -10,6 +10,11 @@ const db = mongoose.connection;
 const show = console.log;
 /////////Model Folder
 const WorkOut = require('./models/workout.js');
+
+///////View Engine
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
 //Port
 //___________________
 
@@ -35,8 +40,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
+
 
 
 ////// Routes
@@ -90,7 +94,7 @@ app.get('/workout/:index',(req,res)=>{
 app.get('/edit/:index',(req,res)=>{
     res.render('Edit',{
         WorkOut: WorkOut[req.params.index],
-        index:req.params.index
+        index: req.params.index
     });
 });
 
@@ -102,13 +106,12 @@ app.get('/edit/:index',(req,res)=>{
 
 //////////Update
 app.put('/update/:index', (req,res) =>{
-    const {index} = req.params
-    req.body.id = WorkOut[index].id
-    WorkOut[index]=req.body;
+    const { Index } = req.params
+    req.body.id = WorkOut[Index]
+    WorkOut[Index] = req.body;
     res.redirect('/workout')
 
 });
-
 
 
 
